@@ -36,6 +36,6 @@ spring:
 #  profiles:
 #    active: dev
 #命令行模式也能激活指定的profile
-#java -jar (jar包名称) --spring.profiles.active=prod
+#java -jar springboot001-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
 
 # 配置文件加载位置
