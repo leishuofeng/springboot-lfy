@@ -2,6 +2,7 @@ package com.cx.springboot001.domain;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -9,16 +10,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @ConfigurationProperties和@Value的区别
- * 1. 前者支持JSR303,后者不支持
+ * @ConfigurationProperties和@Value的区别 1. 前者支持JSR303,后者不支持
  * 2. 前者支持松散语法绑定，后者不支持
  * 3. 前者支持批量注入，后者不支持，只能一个一个指定
  * 4. 前者支持复杂类型的封装，后者只支持简单的数据类型
  */
 @Component
-/*@ConfigurationProperties(prefix = "person")*/
+@ConfigurationProperties(prefix = "person")
+/*@PropertySource(value = {"classpath:person.properties"})*/
 public class Person {
-    @Value("${person.last-name}")
+    /*@Value("${person.last-name}")*/
     private String lastName;
     private Integer age;
     private Date birth;
