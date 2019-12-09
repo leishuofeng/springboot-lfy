@@ -1,12 +1,14 @@
 server:
   port: 60001
 
+test:
+  name: last-name1
 
 person:
   last-name: 张三${random.uuid}
   age: ${random.int}
   birth: 1993/06/18
-  boss: false
+  boss: true
   list:
   - 1
   - 2
@@ -19,16 +21,16 @@ person:
 spring:
   profiles:
     active: dev
----
-server:
-  port: 60002
-spring:
-  profiles: dev
----
-server:
-  port: 60003
-spring:
-  profiles: prod
+#---
+#server:
+#  port: 60002
+#spring:
+#  profiles: dev
+#---
+#server:
+#  port: 60003
+#spring:
+#  profiles: prod
 
 
 ## 激活指定的配置文件或者文档块
